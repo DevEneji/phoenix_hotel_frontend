@@ -7,8 +7,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { Badge } from '../../components/Badge';
-
-type PaymentStatus = 'completed' | 'pending' | 'failed' | 'refunded';
+import { PaymentStatus } from '../../types';
 
 interface Payment {
   id: number;
@@ -16,7 +15,7 @@ interface Payment {
   user: string;
   amount: number;
   payment_method: string;
-  payment_status: PaymentStatus;
+  payment_status: string;
   transaction_id: string;
   payment_date: string;
 }
@@ -217,7 +216,7 @@ const AdminPaymentManagement: React.FC = () => {
                   </td>
                   <td className="px-6 py-4">
                     <Badge
-                      variant={getPaymentStatusColor(payment.payment_status)}
+                      variant={getPaymentStatusColor(payment.payment_status as PaymentStatus) as 'default' | 'success' | 'warning' | 'danger' | 'info'}
                     >
                       {payment.payment_status.toUpperCase()}
                     </Badge>

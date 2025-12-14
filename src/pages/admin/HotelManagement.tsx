@@ -2,7 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Search, Plus, Edit2, Trash2, MapPin, Star } from 'lucide-react';
-import { Button, Card, Badge, Modal, LoadingSpinner } from '../../components';
+import { Modal } from '../../components/Modal';
+import { LoadingSpinner } from '../../components/LoadingSpinner';
+import { Card } from '../../components/Card';
+import { Badge } from '../../components/Badge';
+import { Button } from '../../components/Button';
 import { useModal } from '../../hooks/useModal';
 import { formatDate } from '../../utils/format';
 import toast from 'react-hot-toast';
