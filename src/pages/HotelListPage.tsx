@@ -5,7 +5,10 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Star, MapPin, Filter, Loader2 } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fetchHotels } from '../store/slices/hotelSlice';
-import { Card, Badge, Button, SkeletonCard } from '../components';
+import { Card } from '../components/Card';
+import { Badge } from '../components/Badge';
+import { Button } from '../components/Button';
+import { SkeletonCard } from '../components/SkeletonCard';
 import { formatCurrency } from '../utils/format';
 
 const HotelListPage: React.FC = () => {
