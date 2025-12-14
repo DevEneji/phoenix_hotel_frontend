@@ -1,8 +1,12 @@
 // src/pages/HotelDetailPage.tsx
 
-import { useParams } from 'react-router-dom';
-import { Star, MapPin, Phone, Mail, Wifi, Coffee, Dumbbell } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Star, MapPin, Phone, Mail, Wifi, Coffee, Dumbbell, Loader2 } from 'lucide-react';
 import { fetchHotelById } from '../store/slices/hotelSlice';
+import { useEffect } from 'react';
+import { Button } from '../components/Button';
+import { Card } from '../components/Card';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
 
 const HotelDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
